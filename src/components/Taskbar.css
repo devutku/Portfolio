@@ -1,0 +1,125 @@
+.taskbar-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: var(--taskbar-height);
+  background: var(--bg-acrylic-heavy);
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
+  border-top: 1px solid var(--border-acrylic);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  z-index: 9980;
+  user-select: none;
+}
+
+.taskbar-center-section {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+}
+
+.taskbar-container.align-left .taskbar-center-section {
+  position: static;
+  transform: none;
+}
+
+.taskbar-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background 0.15s ease, transform 0.1s ease;
+  color: var(--text-primary);
+}
+
+.taskbar-icon-btn:hover {
+  background: var(--bg-surface-hover);
+}
+
+.taskbar-icon-btn:active {
+  transform: scale(0.92);
+}
+
+.taskbar-icon-btn.active-app {
+  background: var(--bg-surface-active);
+}
+
+.running-dot {
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--win-accent);
+  transition: width 0.2s ease;
+}
+
+.taskbar-icon-btn.active-app .running-dot {
+  width: 16px;
+}
+
+.windows-logo-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.windows-logo-btn:hover svg {
+  transform: scale(1.08);
+}
+
+.taskbar-tray-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+  margin-left: auto;
+}
+
+.tray-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  height: 36px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  color: var(--text-primary);
+}
+
+.tray-pill:hover {
+  background: var(--bg-surface-hover);
+}
+
+.tray-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.show-desktop-peek {
+  width: 6px;
+  height: 100%;
+  border-left: 1px solid var(--border-acrylic);
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.show-desktop-peek:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
